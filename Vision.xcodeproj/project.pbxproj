@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02E895B1B4668619758DDC27 /* Pods_Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E39A2323A4E0A9E3D2ED1B /* Pods_Vision.framework */; };
+		2C3E5A64D584300D4407A051 /* Pods_VisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9812FE643093154D75C366C9 /* Pods_VisionTests.framework */; };
 		9DF5AF4920C84AA3001AD9B7 /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF5AF3F20C84AA3001AD9B7 /* Vision.framework */; };
 		9DF5AF4E20C84AA3001AD9B7 /* VisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5AF4D20C84AA3001AD9B7 /* VisionTests.swift */; };
 		9DF5AF5020C84AA4001AD9B7 /* Vision.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DF5AF4220C84AA3001AD9B7 /* Vision.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,12 +25,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06CEAEC95D91A0141E14BC9D /* Pods-Vision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vision.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vision/Pods-Vision.release.xcconfig"; sourceTree = "<group>"; };
+		26E39A2323A4E0A9E3D2ED1B /* Pods_Vision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A8DDAE45AB7EF7BA3EC775B /* Pods-VisionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VisionTests/Pods-VisionTests.release.xcconfig"; sourceTree = "<group>"; };
+		9812FE643093154D75C366C9 /* Pods_VisionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VisionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF5AF3F20C84AA3001AD9B7 /* Vision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Vision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF5AF4220C84AA3001AD9B7 /* Vision.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vision.h; sourceTree = "<group>"; };
 		9DF5AF4320C84AA3001AD9B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DF5AF4820C84AA3001AD9B7 /* VisionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VisionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF5AF4D20C84AA3001AD9B7 /* VisionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionTests.swift; sourceTree = "<group>"; };
 		9DF5AF4F20C84AA3001AD9B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC83D2E66C39584A7489A039 /* Pods-VisionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VisionTests/Pods-VisionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EF931678164705D965DE3AB0 /* Pods-Vision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vision.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vision/Pods-Vision.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02E895B1B4668619758DDC27 /* Pods_Vision.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,18 +53,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DF5AF4920C84AA3001AD9B7 /* Vision.framework in Frameworks */,
+				2C3E5A64D584300D4407A051 /* Pods_VisionTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65DD6242893597C9A44DD846 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26E39A2323A4E0A9E3D2ED1B /* Pods_Vision.framework */,
+				9812FE643093154D75C366C9 /* Pods_VisionTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9DF5AF3520C84AA3001AD9B7 = {
 			isa = PBXGroup;
 			children = (
 				9DF5AF4120C84AA3001AD9B7 /* Vision */,
 				9DF5AF4C20C84AA3001AD9B7 /* VisionTests */,
 				9DF5AF4020C84AA3001AD9B7 /* Products */,
+				DA81C2DF7FFDC8A958C248E4 /* Pods */,
+				65DD6242893597C9A44DD846 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +107,17 @@
 			path = VisionTests;
 			sourceTree = "<group>";
 		};
+		DA81C2DF7FFDC8A958C248E4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF931678164705D965DE3AB0 /* Pods-Vision.debug.xcconfig */,
+				06CEAEC95D91A0141E14BC9D /* Pods-Vision.release.xcconfig */,
+				AC83D2E66C39584A7489A039 /* Pods-VisionTests.debug.xcconfig */,
+				7A8DDAE45AB7EF7BA3EC775B /* Pods-VisionTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -104,6 +136,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DF5AF5320C84AA4001AD9B7 /* Build configuration list for PBXNativeTarget "Vision" */;
 			buildPhases = (
+				797BC420FEE889CC1275C7AF /* [CP] Check Pods Manifest.lock */,
 				9DF5AF3A20C84AA3001AD9B7 /* Sources */,
 				9DF5AF3B20C84AA3001AD9B7 /* Frameworks */,
 				9DF5AF3C20C84AA3001AD9B7 /* Headers */,
@@ -122,6 +155,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DF5AF5620C84AA4001AD9B7 /* Build configuration list for PBXNativeTarget "VisionTests" */;
 			buildPhases = (
+				0CCF73304911C8C53DDF391D /* [CP] Check Pods Manifest.lock */,
 				9DF5AF4420C84AA3001AD9B7 /* Sources */,
 				9DF5AF4520C84AA3001AD9B7 /* Frameworks */,
 				9DF5AF4620C84AA3001AD9B7 /* Resources */,
@@ -188,6 +222,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0CCF73304911C8C53DDF391D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VisionTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		797BC420FEE889CC1275C7AF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Vision-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9DF5AF3A20C84AA3001AD9B7 /* Sources */ = {
@@ -338,6 +411,7 @@
 		};
 		9DF5AF5420C84AA4001AD9B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF931678164705D965DE3AB0 /* Pods-Vision.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -348,11 +422,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Vision/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.zheref.Vision;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -363,6 +433,7 @@
 		};
 		9DF5AF5520C84AA4001AD9B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06CEAEC95D91A0141E14BC9D /* Pods-Vision.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -373,11 +444,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Vision/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.zheref.Vision;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -388,15 +455,12 @@
 		};
 		9DF5AF5720C84AA4001AD9B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC83D2E66C39584A7489A039 /* Pods-VisionTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AQUE4FE98B;
 				INFOPLIST_FILE = VisionTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.zheref.VisionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -406,15 +470,12 @@
 		};
 		9DF5AF5820C84AA4001AD9B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A8DDAE45AB7EF7BA3EC775B /* Pods-VisionTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AQUE4FE98B;
 				INFOPLIST_FILE = VisionTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.zheref.VisionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
