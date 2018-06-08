@@ -8,10 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		02E895B1B4668619758DDC27 /* Pods_Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E39A2323A4E0A9E3D2ED1B /* Pods_Vision.framework */; };
+		2B5CA88E20C9C47800712E87 /* FormSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5CA88D20C9C47800712E87 /* FormSymbols.swift */; };
+		2B5CA89020C9DD6C00712E87 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5CA88F20C9DD6C00712E87 /* TextTableViewCell.swift */; };
 		2C3E5A64D584300D4407A051 /* Pods_VisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9812FE643093154D75C366C9 /* Pods_VisionTests.framework */; };
 		9DF5AF4920C84AA3001AD9B7 /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF5AF3F20C84AA3001AD9B7 /* Vision.framework */; };
 		9DF5AF4E20C84AA3001AD9B7 /* VisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5AF4D20C84AA3001AD9B7 /* VisionTests.swift */; };
 		9DF5AF5020C84AA4001AD9B7 /* Vision.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DF5AF4220C84AA3001AD9B7 /* Vision.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9DF5AF8920C8524B001AD9B7 /* DarkTouchTweaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5AF8820C8524B001AD9B7 /* DarkTouchTweaker.swift */; };
+		9DF5AF8B20C8534B001AD9B7 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5AF8A20C8534B001AD9B7 /* UIViewController+Alerts.swift */; };
+		9DF5AF8D20C8542B001AD9B7 /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5AF8C20C8542B001AD9B7 /* Aliases.swift */; };
+		9DF5AF8F20C875FF001AD9B7 /* FormViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DF5AF8E20C875FF001AD9B7 /* FormViewController.storyboard */; };
+		9DF5AF9120C8777D001AD9B7 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5AF9020C8777D001AD9B7 /* FormViewController.swift */; };
+		9DF5AF9320C87A5F001AD9B7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5AF9220C87A5F001AD9B7 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +35,8 @@
 /* Begin PBXFileReference section */
 		06CEAEC95D91A0141E14BC9D /* Pods-Vision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vision.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vision/Pods-Vision.release.xcconfig"; sourceTree = "<group>"; };
 		26E39A2323A4E0A9E3D2ED1B /* Pods_Vision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B5CA88D20C9C47800712E87 /* FormSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSymbols.swift; sourceTree = "<group>"; };
+		2B5CA88F20C9DD6C00712E87 /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
 		7A8DDAE45AB7EF7BA3EC775B /* Pods-VisionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VisionTests/Pods-VisionTests.release.xcconfig"; sourceTree = "<group>"; };
 		9812FE643093154D75C366C9 /* Pods_VisionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VisionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF5AF3F20C84AA3001AD9B7 /* Vision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Vision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,6 +45,12 @@
 		9DF5AF4820C84AA3001AD9B7 /* VisionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VisionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF5AF4D20C84AA3001AD9B7 /* VisionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionTests.swift; sourceTree = "<group>"; };
 		9DF5AF4F20C84AA3001AD9B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DF5AF8820C8524B001AD9B7 /* DarkTouchTweaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTouchTweaker.swift; sourceTree = "<group>"; };
+		9DF5AF8A20C8534B001AD9B7 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		9DF5AF8C20C8542B001AD9B7 /* Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
+		9DF5AF8E20C875FF001AD9B7 /* FormViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FormViewController.storyboard; sourceTree = "<group>"; };
+		9DF5AF9020C8777D001AD9B7 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		9DF5AF9220C87A5F001AD9B7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC83D2E66C39584A7489A039 /* Pods-VisionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VisionTests/Pods-VisionTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF931678164705D965DE3AB0 /* Pods-Vision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vision.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vision/Pods-Vision.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,6 +76,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B5CA88C20C9C3A900712E87 /* FormViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9DF5AF8E20C875FF001AD9B7 /* FormViewController.storyboard */,
+				2B5CA88D20C9C47800712E87 /* FormSymbols.swift */,
+				9DF5AF9020C8777D001AD9B7 /* FormViewController.swift */,
+				2B5CA88F20C9DD6C00712E87 /* TextTableViewCell.swift */,
+			);
+			path = FormViewController;
+			sourceTree = "<group>";
+		};
 		65DD6242893597C9A44DD846 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,8 +119,13 @@
 		9DF5AF4120C84AA3001AD9B7 /* Vision */ = {
 			isa = PBXGroup;
 			children = (
+				9DF5AF8C20C8542B001AD9B7 /* Aliases.swift */,
+				9DF5AF9220C87A5F001AD9B7 /* Constants.swift */,
 				9DF5AF4220C84AA3001AD9B7 /* Vision.h */,
 				9DF5AF4320C84AA3001AD9B7 /* Info.plist */,
+				9DF5AF8520C850D4001AD9B7 /* Extensions */,
+				9DF5AF8620C850E0001AD9B7 /* Tweakers */,
+				9DF5AF8720C85142001AD9B7 /* Components */,
 			);
 			path = Vision;
 			sourceTree = "<group>";
@@ -105,6 +137,30 @@
 				9DF5AF4F20C84AA3001AD9B7 /* Info.plist */,
 			);
 			path = VisionTests;
+			sourceTree = "<group>";
+		};
+		9DF5AF8520C850D4001AD9B7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9DF5AF8A20C8534B001AD9B7 /* UIViewController+Alerts.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9DF5AF8620C850E0001AD9B7 /* Tweakers */ = {
+			isa = PBXGroup;
+			children = (
+				9DF5AF8820C8524B001AD9B7 /* DarkTouchTweaker.swift */,
+			);
+			path = Tweakers;
+			sourceTree = "<group>";
+		};
+		9DF5AF8720C85142001AD9B7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2B5CA88C20C9C3A900712E87 /* FormViewController */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		DA81C2DF7FFDC8A958C248E4 /* Pods */ = {
@@ -182,6 +238,7 @@
 				TargetAttributes = {
 					9DF5AF3E20C84AA3001AD9B7 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 					9DF5AF4720C84AA3001AD9B7 = {
 						CreatedOnToolsVersion = 9.3;
@@ -211,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DF5AF8F20C875FF001AD9B7 /* FormViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +325,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DF5AF8B20C8534B001AD9B7 /* UIViewController+Alerts.swift in Sources */,
+				2B5CA89020C9DD6C00712E87 /* TextTableViewCell.swift in Sources */,
+				9DF5AF8920C8524B001AD9B7 /* DarkTouchTweaker.swift in Sources */,
+				9DF5AF9320C87A5F001AD9B7 /* Constants.swift in Sources */,
+				2B5CA88E20C9C47800712E87 /* FormSymbols.swift in Sources */,
+				9DF5AF9120C8777D001AD9B7 /* FormViewController.swift in Sources */,
+				9DF5AF8D20C8542B001AD9B7 /* Aliases.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +478,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EF931678164705D965DE3AB0 /* Pods-Vision.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -422,10 +488,15 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Vision/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.zheref.Vision;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -435,6 +506,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06CEAEC95D91A0141E14BC9D /* Pods-Vision.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -444,7 +516,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Vision/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.zheref.Vision;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -457,10 +533,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AC83D2E66C39584A7489A039 /* Pods-VisionTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AQUE4FE98B;
 				INFOPLIST_FILE = VisionTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.zheref.VisionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -472,10 +553,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7A8DDAE45AB7EF7BA3EC775B /* Pods-VisionTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AQUE4FE98B;
 				INFOPLIST_FILE = VisionTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.zheref.VisionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
