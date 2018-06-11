@@ -45,6 +45,30 @@ public class FormViewController: UITableViewController {
         return options?[.mode] as? FormMode ?? .action
     }
     
+    private var currentValues: FieldValues {
+        var values = [String: Any?]()
+        
+        var sectionIterator = 0
+        
+        for section in sections {
+            var fieldIterator = 0
+            
+            for field in section.fields {
+                let indexPath = IndexPath(row: fieldIterator, section: sectionIterator)
+                
+                if let cell = tableView.cellForRow(at: indexPath) as? FormFieldDelegate {
+                    values[field.title] = cell.currentSavedValue
+                }
+                
+                fieldIterator += 1
+            }
+            
+            sectionIterator += 1
+        }
+        
+        return values
+    }
+    
     // MARK: - Initializers
     
     public static func instantiate(withName name: String,
@@ -281,10 +305,10 @@ public class FormViewController: UITableViewController {
         if let presentation = options?[.presentation] as? FormPresentation,
             presentation == .modal {
             dismiss(animated: true) { [unowned self] in
-                self.delegate?.formView(withName: self.name, didAbortWithValues: [:])
+                self.delegate?.formView(withName: self.name, didAbortWithValues: self.currentValues)
             }
         } else {
-            delegate?.formView(withName: name, didAbortWithValues: [:])
+            delegate?.formView(withName: name, didAbortWithValues: currentValues)
         }
     }
 

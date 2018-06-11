@@ -89,11 +89,11 @@ class MainTableViewController: UITableViewController {
 extension MainTableViewController : FormViewControllerDelegate {
     
     func formView(withName formName: String, didAbortWithValues values: FieldValues) {
-        
+        print(values)
     }
     
     func formView(withName formName: String, didCompleteWithValues values: FieldValues) {
-        
+        print(values)
     }
     
 }
