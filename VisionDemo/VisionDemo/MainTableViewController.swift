@@ -14,7 +14,8 @@ class MainTableViewController: UITableViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var loginViewCell: UITableViewCell!
-
+    @IBOutlet weak var loginModalViewCell: UITableViewCell!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -31,6 +32,8 @@ class MainTableViewController: UITableViewController {
         
         if cell == loginViewCell {
             showLoginForm()
+        } else if cell == loginModalViewCell {
+            showLoginFormModally()
         }
     }
     
@@ -50,6 +53,25 @@ class MainTableViewController: UITableViewController {
         ])
         
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func showLoginFormModally() {
+        let fields = [
+            Field(title: "E-mail", type: .email, size: .regular, options: [
+                .placeholder : "E-mail"
+            ]),
+            Field(title: "Password", type: .password, size: .regular, options: [
+                .placeholder : "Password"
+            ])
+        ]
+        
+        let vc = FormViewController.instantiate(withName: "login", fields: fields, delegate: self, options: [
+            .presentation: FormPresentation.modal,
+            .mode: FormMode.action,
+            .actionCopy: "Login"
+        ])
+        
+        present(vc, animated: true, completion: nil)
     }
 
     /*

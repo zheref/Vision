@@ -50,7 +50,7 @@ public class FormViewController: UITableViewController {
     public static func instantiate(withName name: String,
                                    fields: [Field],
                                    delegate: FormViewControllerDelegate? = nil,
-                                   options: FormOptions? = nil) -> FormViewController {
+                                   options: FormOptions? = nil) -> UIViewController {
         
         let sections = [
             Section(title: String(), fields: fields, collapsable: false)
@@ -65,7 +65,9 @@ public class FormViewController: UITableViewController {
     public static func instantiate(withName name: String,
                                    sections: [Section],
                                    delegate: FormViewControllerDelegate?,
-                                   options: FormOptions? = nil) -> FormViewController {
+                                   options: FormOptions? = nil) -> UIViewController {
+        
+        let presentation = options?[.presentation] as? FormPresentation
         
         let storyboard = UIStoryboard(name: K.Storyboard.FormViewController,
                                     bundle: Bundle(for: FormViewController.self))
@@ -76,7 +78,15 @@ public class FormViewController: UITableViewController {
         vc.delegate = delegate
         vc.options = options
         
-        return vc
+        if presentation == .modal {
+            vc.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel,
+                                                                  target: vc,
+                                                                  action: #selector(userDidTapToAbort(sender:)))
+            
+            return UINavigationController(rootViewController: vc)
+        } else {
+            return vc
+        }
     }
     
     // MARK: - Lifecycle
@@ -264,5 +274,18 @@ public class FormViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Actions
+    
+    @objc func userDidTapToAbort(sender: UIBarButtonItem) {
+        if let presentation = options?[.presentation] as? FormPresentation,
+            presentation == .modal {
+            dismiss(animated: true) { [unowned self] in
+                self.delegate?.formView(withName: self.name, didAbortWithValues: [:])
+            }
+        } else {
+            delegate?.formView(withName: name, didAbortWithValues: [:])
+        }
+    }
 
 }

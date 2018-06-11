@@ -19,11 +19,17 @@ public typealias FieldValues = [String: Any?]
 public typealias FormOptions = [FormOption: Any]
 
 public enum FormOption {
+    case presentation
     case mode
     case actionCopy
     case navTitle
     case image
     case theme
+}
+
+public enum FormPresentation {
+    case push
+    case modal
 }
 
 public enum FormTheme {

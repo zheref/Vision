@@ -12,4 +12,10 @@ public struct Section {
     var title: String
     var fields: [Field]
     var collapsable: Bool
+    
+    public init(title: String, fields: [Field], collapsable: Bool) {
+        self.title = title
+        self.fields = fields
+        self.collapsable = collapsable
+    }
 }
