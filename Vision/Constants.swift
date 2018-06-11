@@ -15,7 +15,8 @@ struct K {
     }
     
     struct ReuseIdentifier {
-        static let textViewCellReuseIdentifier = "textViewCell"
+        static let textViewCellReuseId = "textViewCell"
+        static let actionViewCellReuseId = "actionViewCell"
     }
     
 }

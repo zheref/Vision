@@ -8,27 +8,74 @@
 
 import UIKit
 
+public protocol FormViewControllerDelegate : class {
+    
+    func formView(withName formName: String, didAbortWithValues values: FieldValues)
+    func formView(withName formName: String, didCompleteWithValues values: FieldValues)
+    
+}
+
 public class FormViewController: UITableViewController {
     
     // MARK: Class members
     
     // MARK: - Stored properties
     
+    private var name = String()
     private var sections = [Section]()
+    
+    private weak var delegate: FormViewControllerDelegate?
+    
+    private var options: FormOptions? {
+        didSet {
+            if let mode = options?[.mode] as? FormMode,
+                mode == .action {
+                
+                let actionCopy = options?[.actionCopy] as? String ?? "Done"
+                let actionField = Field(title: actionCopy, type: .cta, size: .medium)
+                let actionSection = Section(title: "", fields: [actionField], collapsable: false)
+                sections.append(actionSection)
+            }
+        }
+    }
+    
+    // MARK: - Computed properties
+    
+    private var mode: FormMode {
+        return options?[.mode] as? FormMode ?? .action
+    }
     
     // MARK: - Initializers
     
-    public static func instantiate(withFields fields: [Field]) -> FormViewController {
-        return instantiate(withSections: [
+    public static func instantiate(withName name: String,
+                                   fields: [Field],
+                                   delegate: FormViewControllerDelegate? = nil,
+                                   options: FormOptions? = nil) -> FormViewController {
+        
+        let sections = [
             Section(title: String(), fields: fields, collapsable: false)
-        ])
+        ]
+        
+        return instantiate(withName: name,
+                           sections: sections,
+                           delegate: delegate,
+                           options: options)
     }
     
-    public static func instantiate(withSections sections: [Section]) -> FormViewController {
+    public static func instantiate(withName name: String,
+                                   sections: [Section],
+                                   delegate: FormViewControllerDelegate?,
+                                   options: FormOptions? = nil) -> FormViewController {
+        
         let storyboard = UIStoryboard(name: K.Storyboard.FormViewController,
                                     bundle: Bundle(for: FormViewController.self))
         let vc = storyboard.instantiateInitialViewController() as! FormViewController
+        
+        vc.name = name
         vc.sections = sections
+        vc.delegate = delegate
+        vc.options = options
+        
         return vc
     }
     
@@ -42,11 +89,32 @@ public class FormViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        //tableView.separatorColor = UIColor.clear
+        
+        setupActions()
     }
 
     public override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Private operations
+    
+    private func setupActions() {
+        switch mode {
+        case .action:
+            break
+        case .new:
+            break
+        case .edit:
+            break
+        case .editDelete:
+            break
+        case .view:
+            break
+        }
     }
 
     // MARK: - Table view data source
@@ -66,9 +134,11 @@ public class FormViewController: UITableViewController {
         
         switch field.type {
         case .name:
-            let identifier = K.ReuseIdentifier.textViewCellReuseIdentifier
+            let identifier = K.ReuseIdentifier.textViewCellReuseId
             let cell = tableView.dequeueReusableCell(withIdentifier: identifier,
                                                      for: indexPath)
+            
+            //cell.separatorInset = UIEdgeInsetsMake(0.0, cell.bounds.size.width, 0.0, 0.0)
             
             if let textCell = cell as? TextTableViewCell {
                 textCell.configAsName(forField: field)
@@ -76,9 +146,11 @@ public class FormViewController: UITableViewController {
             
             return cell
         case .email:
-            let identifier = K.ReuseIdentifier.textViewCellReuseIdentifier
+            let identifier = K.ReuseIdentifier.textViewCellReuseId
             let cell = tableView.dequeueReusableCell(withIdentifier: identifier,
                                                      for: indexPath)
+            
+            //cell.separatorInset = UIEdgeInsetsMake(0.0, cell.bounds.size.width, 0.0, 0.0)
             
             if let textCell = cell as? TextTableViewCell {
                 textCell.configAsEmail(forField: field)
@@ -86,9 +158,11 @@ public class FormViewController: UITableViewController {
             
             return cell
         case .password:
-            let identifier = K.ReuseIdentifier.textViewCellReuseIdentifier
+            let identifier = K.ReuseIdentifier.textViewCellReuseId
             let cell = tableView.dequeueReusableCell(withIdentifier: identifier,
                                                      for: indexPath)
+            
+            //cell.separatorInset = UIEdgeInsetsMake(0.0, cell.bounds.size.width, 0.0, 0.0)
             
             if let textCell = cell as? TextTableViewCell {
                 textCell.configAsPassword(forField: field)
@@ -96,9 +170,11 @@ public class FormViewController: UITableViewController {
             
             return cell
         case .text:
-            let identifier = K.ReuseIdentifier.textViewCellReuseIdentifier
+            let identifier = K.ReuseIdentifier.textViewCellReuseId
             let cell = tableView.dequeueReusableCell(withIdentifier: identifier,
                                                      for: indexPath)
+            
+            //cell.separatorInset = UIEdgeInsetsMake(0.0, cell.bounds.size.width, 0.0, 0.0)
             
             if let textCell = cell as? TextTableViewCell {
                 textCell.configAsText(forField: field)
@@ -106,12 +182,44 @@ public class FormViewController: UITableViewController {
             
             return cell
         case .phoneNumber:
-            let identifier = K.ReuseIdentifier.textViewCellReuseIdentifier
+            let identifier = K.ReuseIdentifier.textViewCellReuseId
             let cell = tableView.dequeueReusableCell(withIdentifier: identifier,
                                                      for: indexPath)
             
+            //cell.separatorInset = UIEdgeInsetsMake(0.0, cell.bounds.size.width, 0.0, 0.0)
+            
             if let textCell = cell as? TextTableViewCell {
                 textCell.configAsPhoneNumber(forField: field)
+            }
+            
+            return cell
+        case .cta:
+            let identifier = K.ReuseIdentifier.actionViewCellReuseId
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier,
+                                                     for: indexPath)
+            
+            if let actionCell = cell as? ActionTableViewCell {
+                actionCell.configAsCTA(forField: field)
+            }
+            
+            return cell
+        case .action:
+            let identifier = K.ReuseIdentifier.actionViewCellReuseId
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier,
+                                                     for: indexPath)
+            
+            if let actionCell = cell as? ActionTableViewCell {
+                actionCell.configAsAction(forField: field)
+            }
+            
+            return cell
+        case .deleteAction:
+            let identifier = K.ReuseIdentifier.actionViewCellReuseId
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier,
+                                                     for: indexPath)
+            
+            if let actionCell = cell as? ActionTableViewCell {
+                actionCell.configAsDelete(forField: field)
             }
             
             return cell
@@ -128,8 +236,10 @@ public class FormViewController: UITableViewController {
         switch field.size {
         case .regular:
             return 44.0
+        case .medium:
+            return 50.0
         case .big:
-            return 80.0
+            return 56.0
         }
     }
 

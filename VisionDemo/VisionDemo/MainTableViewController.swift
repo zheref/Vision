@@ -35,14 +35,20 @@ class MainTableViewController: UITableViewController {
     }
     
     private func showLoginForm() {
-        let vc = FormViewController.instantiate(withFields: [
+        let fields = [
             Field(title: "E-mail", type: .email, size: .regular, options: [
                 .placeholder : "E-mail"
             ]),
             Field(title: "Password", type: .password, size: .regular, options: [
                 .placeholder : "Password"
             ])
+        ]
+        
+        let vc = FormViewController.instantiate(withName: "login", fields: fields, delegate: self, options: [
+            .mode: FormMode.action,
+            .actionCopy: "Login"
         ])
+        
         navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -56,4 +62,16 @@ class MainTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension MainTableViewController : FormViewControllerDelegate {
+    
+    func formView(withName formName: String, didAbortWithValues values: FieldValues) {
+        
+    }
+    
+    func formView(withName formName: String, didCompleteWithValues values: FieldValues) {
+        
+    }
+    
 }

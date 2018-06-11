@@ -10,6 +10,10 @@
 		02E895B1B4668619758DDC27 /* Pods_Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E39A2323A4E0A9E3D2ED1B /* Pods_Vision.framework */; };
 		2B5CA88E20C9C47800712E87 /* FormSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5CA88D20C9C47800712E87 /* FormSymbols.swift */; };
 		2B5CA89020C9DD6C00712E87 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5CA88F20C9DD6C00712E87 /* TextTableViewCell.swift */; };
+		2B5CA89920CB145B00712E87 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5CA89820CB145B00712E87 /* Field.swift */; };
+		2B5CA89B20CB147700712E87 /* FieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5CA89A20CB147700712E87 /* FieldType.swift */; };
+		2B5CA89D20CB14DA00712E87 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5CA89C20CB14DA00712E87 /* Section.swift */; };
+		2B5CA89F20CB214200712E87 /* ActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5CA89E20CB214200712E87 /* ActionTableViewCell.swift */; };
 		2C3E5A64D584300D4407A051 /* Pods_VisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9812FE643093154D75C366C9 /* Pods_VisionTests.framework */; };
 		9DF5AF4920C84AA3001AD9B7 /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF5AF3F20C84AA3001AD9B7 /* Vision.framework */; };
 		9DF5AF4E20C84AA3001AD9B7 /* VisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5AF4D20C84AA3001AD9B7 /* VisionTests.swift */; };
@@ -37,6 +41,10 @@
 		26E39A2323A4E0A9E3D2ED1B /* Pods_Vision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B5CA88D20C9C47800712E87 /* FormSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSymbols.swift; sourceTree = "<group>"; };
 		2B5CA88F20C9DD6C00712E87 /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
+		2B5CA89820CB145B00712E87 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
+		2B5CA89A20CB147700712E87 /* FieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldType.swift; sourceTree = "<group>"; };
+		2B5CA89C20CB14DA00712E87 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		2B5CA89E20CB214200712E87 /* ActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTableViewCell.swift; sourceTree = "<group>"; };
 		7A8DDAE45AB7EF7BA3EC775B /* Pods-VisionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VisionTests/Pods-VisionTests.release.xcconfig"; sourceTree = "<group>"; };
 		9812FE643093154D75C366C9 /* Pods_VisionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VisionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF5AF3F20C84AA3001AD9B7 /* Vision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Vision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,9 +88,13 @@
 			isa = PBXGroup;
 			children = (
 				9DF5AF8E20C875FF001AD9B7 /* FormViewController.storyboard */,
+				2B5CA89C20CB14DA00712E87 /* Section.swift */,
+				2B5CA89820CB145B00712E87 /* Field.swift */,
+				2B5CA89A20CB147700712E87 /* FieldType.swift */,
 				2B5CA88D20C9C47800712E87 /* FormSymbols.swift */,
 				9DF5AF9020C8777D001AD9B7 /* FormViewController.swift */,
 				2B5CA88F20C9DD6C00712E87 /* TextTableViewCell.swift */,
+				2B5CA89E20CB214200712E87 /* ActionTableViewCell.swift */,
 			);
 			path = FormViewController;
 			sourceTree = "<group>";
@@ -327,11 +339,15 @@
 			files = (
 				9DF5AF8B20C8534B001AD9B7 /* UIViewController+Alerts.swift in Sources */,
 				2B5CA89020C9DD6C00712E87 /* TextTableViewCell.swift in Sources */,
+				2B5CA89920CB145B00712E87 /* Field.swift in Sources */,
 				9DF5AF8920C8524B001AD9B7 /* DarkTouchTweaker.swift in Sources */,
 				9DF5AF9320C87A5F001AD9B7 /* Constants.swift in Sources */,
+				2B5CA89D20CB14DA00712E87 /* Section.swift in Sources */,
 				2B5CA88E20C9C47800712E87 /* FormSymbols.swift in Sources */,
 				9DF5AF9120C8777D001AD9B7 /* FormViewController.swift in Sources */,
 				9DF5AF8D20C8542B001AD9B7 /* Aliases.swift in Sources */,
+				2B5CA89F20CB214200712E87 /* ActionTableViewCell.swift in Sources */,
+				2B5CA89B20CB147700712E87 /* FieldType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

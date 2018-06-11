@@ -8,65 +8,36 @@
 
 import Foundation
 
-public enum FieldType {
-    
-    // Text
-    case name
-    case text
-    case password
-    case email
-    case phoneNumber
-    
-    // Number
-    case short
-    case slider
-    case number
-    case money
-    
-    case date
-    case time
-    case datetime
-    
-    case options
-    case countries
-    case timezones
-    case currencies
-}
-
 public enum FieldSize {
     case regular
+    case medium
     case big
 }
 
-public struct Field {
-    // MARK: - Stored properties
-    
-    var title: String
-    var type: FieldType
-    var size: FieldSize
-    var options: FieldOptions?
-    
-    // MARK: - Initializers
-    
-    public init(title: String, type: FieldType) {
-        self.init(title: title, type: type, size: .regular)
-    }
-    
-    public init(title: String, type: FieldType, size: FieldSize, options: FieldOptions? = nil) {
-        self.title = title
-        self.type = type
-        self.size = size
-        self.options = options
-    }
+public typealias FieldValues = [String: Any?]
+
+public typealias FormOptions = [FormOption: Any]
+
+public enum FormOption {
+    case mode
+    case actionCopy
+    case navTitle
+    case image
+    case theme
 }
 
-public struct Section {
-    var title: String
-    var fields: [Field]
-    var collapsable: Bool
+public enum FormTheme {
+    case light
+    case dark
 }
 
-typealias FieldValuesDict = [String: Any?]
+public enum FormMode {
+    case new
+    case edit
+    case editDelete
+    case view
+    case action
+}
 
 public enum FieldOption {
     case placeholder
