@@ -14,6 +14,10 @@ class ActionTableViewCell: UITableViewCell {
     
     @IBOutlet weak var actionButton: UIButton!
     
+    // MARK: - Stored properties
+    
+    var actionClosure: VisionHandler?
+    
     // MARK: - Lifecycle
     
     override func awakeFromNib() {
@@ -38,22 +42,25 @@ class ActionTableViewCell: UITableViewCell {
     
     // MARK: - Operations
     
-    func configAsCTA(forField field: Field) {
+    func configAsCTA(forField field: Field, withHandler handler: VisionHandler?) {
+        actionClosure = handler
         actionButton.setTitle(field.title, for: .normal)
     }
     
-    func configAsAction(forField field: Field) {
+    func configAsAction(forField field: Field, withHandler handler: VisionHandler?) {
+        actionClosure = handler
         actionButton.setTitle(field.title, for: .normal)
     }
     
-    func configAsDelete(forField field: Field) {
+    func configAsDelete(forField field: Field, withHandler handler: VisionHandler?) {
+        actionClosure = handler
         actionButton.setTitle(field.title, for: .normal)
     }
     
     // MARK: - Actions
     
     @IBAction func userDidTapAction(_ sender: UIButton) {
-        
+        actionClosure?()
     }
 
 }

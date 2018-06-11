@@ -233,7 +233,9 @@ public class FormViewController: UITableViewController {
                                                      for: indexPath)
             
             if let actionCell = cell as? ActionTableViewCell {
-                actionCell.configAsCTA(forField: field)
+                actionCell.configAsCTA(forField: field) { [unowned self] in
+                    self.userDidTapToConfirm(sender: actionCell)
+                }
             }
             
             return cell
@@ -243,7 +245,9 @@ public class FormViewController: UITableViewController {
                                                      for: indexPath)
             
             if let actionCell = cell as? ActionTableViewCell {
-                actionCell.configAsAction(forField: field)
+                actionCell.configAsAction(forField: field) {
+                    
+                }
             }
             
             return cell
@@ -253,7 +257,9 @@ public class FormViewController: UITableViewController {
                                                      for: indexPath)
             
             if let actionCell = cell as? ActionTableViewCell {
-                actionCell.configAsDelete(forField: field)
+                actionCell.configAsDelete(forField: field) {
+                    
+                }
             }
             
             return cell
@@ -309,6 +315,18 @@ public class FormViewController: UITableViewController {
             }
         } else {
             delegate?.formView(withName: name, didAbortWithValues: currentValues)
+        }
+    }
+    
+    @objc func userDidTapToConfirm(sender: Any) {
+        if let presentation = options?[.presentation] as? FormPresentation,
+            presentation == .modal {
+            dismiss(animated: true) { [unowned self] in
+                self.delegate?.formView(withName: self.name, didCompleteWithValues: self.currentValues)
+            }
+        } else {
+            navigationController?.popViewController(animated: true)
+            delegate?.formView(withName: name, didCompleteWithValues: currentValues)
         }
     }
 
