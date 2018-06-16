@@ -32,7 +32,7 @@ public class XVSFormViewController: UITableViewController {
                 mode == .action {
                 
                 let actionCopy = options?[.actionCopy] as? String ?? "Done"
-                let actionField = XVSField(title: actionCopy, type: .cta, size: .medium)
+                let actionField = XVSField(name: "cta", title: actionCopy, type: .cta, size: .medium)
                 let actionSection = XVSSection(title: "", fields: [actionField], collapsable: false)
                 sections.append(actionSection)
             }
@@ -57,7 +57,7 @@ public class XVSFormViewController: UITableViewController {
                 let indexPath = IndexPath(row: fieldIterator, section: sectionIterator)
                 
                 if let cell = tableView.cellForRow(at: indexPath) as? FormFieldDelegate {
-                    values[field.title] = cell.currentSavedValue
+                    values[field.name] = cell.currentSavedValue
                 }
                 
                 fieldIterator += 1

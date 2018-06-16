@@ -11,6 +11,7 @@ import Foundation
 public struct XVSField {
     // MARK: - Stored properties
     
+    var name: String
     var title: String
     var type: XVSFieldType
     var size: XVSFieldSize
@@ -18,11 +19,18 @@ public struct XVSField {
     
     // MARK: - Initializers
     
-    public init(title: String, type: XVSFieldType) {
-        self.init(title: title, type: type, size: .regular)
+    public init(name: String,
+                title: String,
+                type: XVSFieldType) {
+        self.init(name: name, title: title, type: type, size: .regular)
     }
     
-    public init(title: String, type: XVSFieldType, size: XVSFieldSize, options: XVSFieldOptions? = nil) {
+    public init(name: String,
+                title: String,
+                type: XVSFieldType,
+                size: XVSFieldSize,
+                options: XVSFieldOptions? = nil) {
+        self.name = name
         self.title = title
         self.type = type
         self.size = size

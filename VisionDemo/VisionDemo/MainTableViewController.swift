@@ -39,10 +39,10 @@ class MainTableViewController: UITableViewController {
     
     private func showLoginForm() {
         let fields = [
-            XVSField(title: "E-mail", type: .email, size: .regular, options: [
+            XVSField(name: "email", title: "E-mail", type: .email, size: .regular, options: [
                 .placeholder : "E-mail"
             ]),
-            XVSField(title: "Password", type: .password, size: .regular, options: [
+            XVSField(name: "password", title: "Password", type: .password, size: .regular, options: [
                 .placeholder : "Password"
             ])
         ]
@@ -57,10 +57,10 @@ class MainTableViewController: UITableViewController {
     
     private func showLoginFormModally() {
         let fields = [
-            XVSField(title: "E-mail", type: .email, size: .regular, options: [
+            XVSField(name: "email", title: "E-mail", type: .email, size: .regular, options: [
                 .placeholder : "E-mail"
             ]),
-            XVSField(title: "Password", type: .password, size: .regular, options: [
+            XVSField(name: "password", title: "Password", type: .password, size: .regular, options: [
                 .placeholder : "Password"
             ])
         ]
