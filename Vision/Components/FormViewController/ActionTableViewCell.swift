@@ -50,6 +50,8 @@ class ActionTableViewCell: UITableViewCell {
     func configAsAction(forField field: XVSField, withHandler handler: XVSHandler?) {
         actionClosure = handler
         actionButton.setTitle(field.title, for: .normal)
+        actionButton.backgroundColor = UIColor.clear
+        actionButton.setTitleColor(actionButton.tintColor, for: .normal)
     }
     
     func configAsDelete(forField field: XVSField, withHandler handler: XVSHandler?) {
