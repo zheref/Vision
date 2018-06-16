@@ -11,7 +11,8 @@ import Foundation
 public struct XVSField {
     // MARK: - Stored properties
     
-    var name: String
+    public var name: String
+    
     var title: String
     var type: XVSFieldType
     var size: XVSFieldSize

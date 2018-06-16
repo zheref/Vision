@@ -49,6 +49,7 @@ public enum XVSFieldOption {
     case placeholder
     case keyboardColor
     case hasClearButton
+    case action
 }
 
 public typealias XVSFieldOptions = [XVSFieldOption: Any]

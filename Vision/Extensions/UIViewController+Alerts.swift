@@ -28,6 +28,7 @@ struct VisionRetryConstants {
     static let defaultStyle = UIAlertControllerStyle.alert
     static let defaultAnimated = true
     static let defaultPresentationCompletion: XVSHandler? = nil
+    static let okCopy = "Ok"
 }
 
 // MARK: - Extension
@@ -78,6 +79,20 @@ public extension UIViewController {
             VisionRetryConstants.defaultPresentationCompletion
         
         present(alert, animated: animated, completion: completion)
+    }
+    
+    func showOkAlert(title: String, message: String, handler ok: XVSHandler? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        // Ok action
+        
+        let okAction = UIAlertAction(title: VisionRetryConstants.okCopy, style: .default) { (action) in
+            ok?()
+        }
+        
+        alert.addAction(okAction)
+        
+        present(alert, animated: true, completion: nil)
     }
     
 }

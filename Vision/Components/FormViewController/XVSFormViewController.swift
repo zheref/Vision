@@ -10,8 +10,13 @@ import UIKit
 
 public protocol XVSFormViewControllerDelegate : class {
     
-    func formView(withName formName: String, didAbortWithValues values: XVSFieldValues)
-    func formView(withName formName: String, didCompleteWithValues values: XVSFieldValues)
+    func formView(_ viewController: XVSFormViewController, didAbortWithValues values: XVSFieldValues)
+    func formView(_ viewController: XVSFormViewController, didCompleteWithValues values: XVSFieldValues)
+    
+    func formView(_ viewController: XVSFormViewController, shouldAllowToCompleteWithValues values: XVSFieldValues) -> Bool
+    func formView(_ viewController: XVSFormViewController, shouldAllowToAbortWithValues values: XVSFieldValues) -> Bool
+    
+    func formView(_ viewController: XVSFormViewController, emmitedActionFromField field: XVSField, whileHavingValues values: XVSFieldValues)
     
 }
 
@@ -21,7 +26,8 @@ public class XVSFormViewController: UITableViewController {
     
     // MARK: - Stored properties
     
-    private var name = String()
+    public var name = String()
+    
     private var sections = [XVSSection]()
     
     private weak var delegate: XVSFormViewControllerDelegate?
@@ -245,8 +251,8 @@ public class XVSFormViewController: UITableViewController {
                                                      for: indexPath)
             
             if let actionCell = cell as? ActionTableViewCell {
-                actionCell.configAsAction(forField: field) {
-                    
+                actionCell.configAsAction(forField: field) { [unowned self] in
+                    self.delegate?.formView(self, emmitedActionFromField: field, whileHavingValues: self.currentValues)
                 }
             }
             
@@ -311,10 +317,10 @@ public class XVSFormViewController: UITableViewController {
         if let presentation = options?[.presentation] as? XVSFormPresentation,
             presentation == .modal {
             dismiss(animated: true) { [unowned self] in
-                self.delegate?.formView(withName: self.name, didAbortWithValues: self.currentValues)
+                self.delegate?.formView(self, didAbortWithValues: self.currentValues)
             }
         } else {
-            delegate?.formView(withName: name, didAbortWithValues: currentValues)
+            self.delegate?.formView(self, didAbortWithValues: self.currentValues)
         }
     }
     
@@ -322,11 +328,11 @@ public class XVSFormViewController: UITableViewController {
         if let presentation = options?[.presentation] as? XVSFormPresentation,
             presentation == .modal {
             dismiss(animated: true) { [unowned self] in
-                self.delegate?.formView(withName: self.name, didCompleteWithValues: self.currentValues)
+                self.delegate?.formView(self, didCompleteWithValues: self.currentValues)
             }
         } else {
             navigationController?.popViewController(animated: true)
-            delegate?.formView(withName: name, didCompleteWithValues: currentValues)
+            self.delegate?.formView(self, didCompleteWithValues: self.currentValues)
         }
     }
 

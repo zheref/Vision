@@ -1,0 +1,4 @@
+framework module XVision {
+    header "XVision-Swift.h"
+    requires objc
+}

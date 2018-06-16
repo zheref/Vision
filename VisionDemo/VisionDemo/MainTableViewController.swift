@@ -62,7 +62,8 @@ class MainTableViewController: UITableViewController {
             ]),
             XVSField(name: "password", title: "Password", type: .password, size: .regular, options: [
                 .placeholder : "Password"
-            ])
+            ]),
+            XVSField(name: "action", title: "Custom Action", type: .action, size: .regular, options: nil)
         ]
         
         let vc = XVSFormViewController.instantiate(withName: "login", fields: fields, delegate: self, options: [
@@ -88,12 +89,26 @@ class MainTableViewController: UITableViewController {
 
 extension MainTableViewController : XVSFormViewControllerDelegate {
     
-    func formView(withName formName: String, didAbortWithValues values: XVSFieldValues) {
+    func formView(_ viewController: XVSFormViewController, didAbortWithValues values: XVSFieldValues) {
         print(values)
     }
     
-    func formView(withName formName: String, didCompleteWithValues values: XVSFieldValues) {
+    func formView(_ viewController: XVSFormViewController, didCompleteWithValues values: XVSFieldValues) {
         print(values)
+    }
+    
+    func formView(_ viewController: XVSFormViewController, shouldAllowToCompleteWithValues values: XVSFieldValues) -> Bool {
+        return true
+    }
+    
+    func formView(_ viewController: XVSFormViewController, shouldAllowToAbortWithValues values: XVSFieldValues) -> Bool {
+        return true
+    }
+    
+    func formView(_ formViewController: XVSFormViewController, emmitedActionFromField field: XVSField, whileHavingValues values: XVSFieldValues) {
+        if field.name == "action" {
+            formViewController.showOkAlert(title: "Worked", message: "Custom actions are working")
+        }
     }
     
 }
