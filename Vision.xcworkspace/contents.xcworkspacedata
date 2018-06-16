@@ -5,7 +5,7 @@
       location = "group:VisionDemo/VisionDemo.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Vision.xcodeproj">
+      location = "group:/Volumes/Babylon/AIB/Vision/XVision.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

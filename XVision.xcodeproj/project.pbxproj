@@ -52,7 +52,7 @@
 		9DF5AF3F20C84AA3001AD9B7 /* XVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF5AF4220C84AA3001AD9B7 /* Vision.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vision.h; sourceTree = "<group>"; };
 		9DF5AF4320C84AA3001AD9B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9DF5AF4820C84AA3001AD9B7 /* VisionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VisionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DF5AF4820C84AA3001AD9B7 /* XVisionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XVisionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF5AF4D20C84AA3001AD9B7 /* VisionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionTests.swift; sourceTree = "<group>"; };
 		9DF5AF4F20C84AA3001AD9B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DF5AF8820C8524B001AD9B7 /* DarkTouchTweaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTouchTweaker.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				9DF5AF3F20C84AA3001AD9B7 /* XVision.framework */,
-				9DF5AF4820C84AA3001AD9B7 /* VisionTests.xctest */,
+				9DF5AF4820C84AA3001AD9B7 /* XVisionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -223,9 +223,9 @@
 			productReference = 9DF5AF3F20C84AA3001AD9B7 /* XVision.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		9DF5AF4720C84AA3001AD9B7 /* VisionTests */ = {
+		9DF5AF4720C84AA3001AD9B7 /* XVisionTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9DF5AF5620C84AA4001AD9B7 /* Build configuration list for PBXNativeTarget "VisionTests" */;
+			buildConfigurationList = 9DF5AF5620C84AA4001AD9B7 /* Build configuration list for PBXNativeTarget "XVisionTests" */;
 			buildPhases = (
 				0CCF73304911C8C53DDF391D /* [CP] Check Pods Manifest.lock */,
 				9DF5AF4420C84AA3001AD9B7 /* Sources */,
@@ -237,9 +237,9 @@
 			dependencies = (
 				9DF5AF4B20C84AA3001AD9B7 /* PBXTargetDependency */,
 			);
-			name = VisionTests;
+			name = XVisionTests;
 			productName = VisionTests;
-			productReference = 9DF5AF4820C84AA3001AD9B7 /* VisionTests.xctest */;
+			productReference = 9DF5AF4820C84AA3001AD9B7 /* XVisionTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -261,7 +261,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9DF5AF3920C84AA3001AD9B7 /* Build configuration list for PBXProject "Vision" */;
+			buildConfigurationList = 9DF5AF3920C84AA3001AD9B7 /* Build configuration list for PBXProject "XVision" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -274,7 +274,7 @@
 			projectRoot = "";
 			targets = (
 				9DF5AF3E20C84AA3001AD9B7 /* XVision */,
-				9DF5AF4720C84AA3001AD9B7 /* VisionTests */,
+				9DF5AF4720C84AA3001AD9B7 /* XVisionTests */,
 			);
 		};
 /* End PBXProject section */
@@ -592,7 +592,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9DF5AF3920C84AA3001AD9B7 /* Build configuration list for PBXProject "Vision" */ = {
+		9DF5AF3920C84AA3001AD9B7 /* Build configuration list for PBXProject "XVision" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9DF5AF5120C84AA4001AD9B7 /* Debug */,
@@ -610,7 +610,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9DF5AF5620C84AA4001AD9B7 /* Build configuration list for PBXNativeTarget "VisionTests" */ = {
+		9DF5AF5620C84AA4001AD9B7 /* Build configuration list for PBXNativeTarget "XVisionTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9DF5AF5720C84AA4001AD9B7 /* Debug */,
