@@ -13,6 +13,11 @@ class TextTableViewCell: UITableViewCell {
     // MARK: Outlets
     
     @IBOutlet weak var textField: UITextField!
+    
+    // MARK: - Stored properties
+    
+    var field: XVSField?
+    weak var delegate: FieldCellDelegate?
 
     // MARK: - Lifecycle
     
@@ -32,37 +37,56 @@ class TextTableViewCell: UITableViewCell {
     func configAsName(forField field: XVSField) {
         textField.autocapitalizationType = .words
         
+        configChangeTracking()
         handleClearButtonMode(fromOptions: field.options)
         handlePlaceholder(forField: field)
+        
+        self.field = field
     }
     
     func configAsEmail(forField field: XVSField) {
         textField.keyboardType = .emailAddress
         
+        configChangeTracking()
         handleClearButtonMode(fromOptions: field.options)
         handlePlaceholder(forField: field)
+        
+        self.field = field
     }
     
     func configAsPassword(forField field: XVSField) {
         textField.isSecureTextEntry = true
         
+        configChangeTracking()
         handleClearButtonMode(fromOptions: field.options)
         handlePlaceholder(forField: field)
+        
+        self.field = field
     }
     
     func configAsText(forField field: XVSField) {
+        configChangeTracking()
         handleClearButtonMode(fromOptions: field.options)
         handlePlaceholder(forField: field)
+        
+        self.field = field
     }
     
     func configAsPhoneNumber(forField field: XVSField) {
         textField.keyboardType = .namePhonePad
         
+        configChangeTracking()
         handleClearButtonMode(fromOptions: field.options)
         handlePlaceholder(forField: field)
+        
+        self.field = field
     }
     
     // MARK: - Private operations
+    
+    private func configChangeTracking() {
+        textField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
+    }
     
     private func handleClearButtonMode(fromOptions options: XVSFieldOptions?) {
         if let hasClearButton = options?[.hasClearButton] as? Bool {
@@ -79,10 +103,20 @@ class TextTableViewCell: UITableViewCell {
             textField.placeholder = field.title
         }
     }
+    
+    // MARK: - Actions
+    
+    @objc func textFieldDidChange(textField: UITextField) {
+        guard let field = field else {
+            return
+        }
+        
+        delegate?.cell(forField: field, changedToValue: textField.text)
+    }
 
 }
 
-extension TextTableViewCell : FormFieldDelegate {
+extension TextTableViewCell : FormFieldProtocol {
     
     var currentSavedValue: Any? {
         return textField.text

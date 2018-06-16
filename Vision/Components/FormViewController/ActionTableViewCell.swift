@@ -40,11 +40,27 @@ class ActionTableViewCell: UITableViewCell {
         actionButton.backgroundColor = tintColor
     }
     
+    private func handleEnability(forField field: XVSField) {
+        guard let isEnabled = field.options?[.isEnabled] as? Bool else { return }
+        actionButton.isEnabled = isEnabled
+        
+        if isEnabled {
+            if field.type == .cta {
+                actionButton.backgroundColor = actionButton.tintColor
+            }
+        } else {
+            if field.type == .cta {
+                actionButton.backgroundColor = UIColor.lightGray
+            }
+        }
+    }
+    
     // MARK: - Operations
     
     func configAsCTA(forField field: XVSField, withHandler handler: XVSHandler?) {
         actionClosure = handler
         actionButton.setTitle(field.title, for: .normal)
+        handleEnability(forField: field)
     }
     
     func configAsAction(forField field: XVSField, withHandler handler: XVSHandler?) {
@@ -52,11 +68,13 @@ class ActionTableViewCell: UITableViewCell {
         actionButton.setTitle(field.title, for: .normal)
         actionButton.backgroundColor = UIColor.clear
         actionButton.setTitleColor(actionButton.tintColor, for: .normal)
+        handleEnability(forField: field)
     }
     
     func configAsDelete(forField field: XVSField, withHandler handler: XVSHandler?) {
         actionClosure = handler
         actionButton.setTitle(field.title, for: .normal)
+        handleEnability(forField: field)
     }
     
     // MARK: - Actions

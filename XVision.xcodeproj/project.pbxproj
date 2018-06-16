@@ -16,6 +16,7 @@
 		2B5CA89F20CB214200712E87 /* ActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5CA89E20CB214200712E87 /* ActionTableViewCell.swift */; };
 		2C3E5A64D584300D4407A051 /* Pods_VisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9812FE643093154D75C366C9 /* Pods_VisionTests.framework */; };
 		9D64A33720D57271001F99C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D64A33620D57271001F99C3 /* UIKit.framework */; };
+		9D64A34120D5BE7C001F99C3 /* FieldCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D64A34020D5BE7C001F99C3 /* FieldCellDelegate.swift */; };
 		9DF5AF4920C84AA3001AD9B7 /* XVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF5AF3F20C84AA3001AD9B7 /* XVision.framework */; };
 		9DF5AF4E20C84AA3001AD9B7 /* VisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5AF4D20C84AA3001AD9B7 /* VisionTests.swift */; };
 		9DF5AF5020C84AA4001AD9B7 /* Vision.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DF5AF4220C84AA3001AD9B7 /* Vision.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -49,6 +50,7 @@
 		7A8DDAE45AB7EF7BA3EC775B /* Pods-VisionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VisionTests/Pods-VisionTests.release.xcconfig"; sourceTree = "<group>"; };
 		9812FE643093154D75C366C9 /* Pods_VisionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VisionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D64A33620D57271001F99C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9D64A34020D5BE7C001F99C3 /* FieldCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldCellDelegate.swift; sourceTree = "<group>"; };
 		9DF5AF3F20C84AA3001AD9B7 /* XVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF5AF4220C84AA3001AD9B7 /* Vision.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vision.h; sourceTree = "<group>"; };
 		9DF5AF4320C84AA3001AD9B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				2B5CA89A20CB147700712E87 /* XVSFieldType.swift */,
 				2B5CA88D20C9C47800712E87 /* FormSymbols.swift */,
 				9DF5AF9020C8777D001AD9B7 /* XVSFormViewController.swift */,
+				9D64A34020D5BE7C001F99C3 /* FieldCellDelegate.swift */,
 				2B5CA88F20C9DD6C00712E87 /* TextTableViewCell.swift */,
 				2B5CA89E20CB214200712E87 /* ActionTableViewCell.swift */,
 			);
@@ -342,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DF5AF8B20C8534B001AD9B7 /* UIViewController+Alerts.swift in Sources */,
+				9D64A34120D5BE7C001F99C3 /* FieldCellDelegate.swift in Sources */,
 				2B5CA89020C9DD6C00712E87 /* TextTableViewCell.swift in Sources */,
 				2B5CA89920CB145B00712E87 /* XVSField.swift in Sources */,
 				9DF5AF8920C8524B001AD9B7 /* DarkTouchTweaker.swift in Sources */,

@@ -22,7 +22,13 @@ public protocol XVSFormViewControllerDelegate : class {
 
 public class XVSFormViewController: UITableViewController {
     
-    // MARK: Class members
+    // MARK: - Nested types
+    
+    private struct Constants {
+        static let ctaActionName = "cta"
+    }
+    
+    // MARK: - Class members
     
     // MARK: - Stored properties
     
@@ -34,13 +40,29 @@ public class XVSFormViewController: UITableViewController {
     
     private var options: XVSFormOptions? {
         didSet {
+            if delegate == nil {
+                print("Warning: Delegate has not been set before setting options. This could result in unexpected behaviors.")
+            }
+            
             if let mode = options?[.mode] as? XVSFormMode,
                 mode == .action {
                 
                 let actionCopy = options?[.actionCopy] as? String ?? "Done"
-                let actionField = XVSField(name: "cta", title: actionCopy, type: .cta, size: .medium)
+                
+                var shouldActionBeInitiallyEnabled = true
+                
+                if let delegate = delegate {
+                    shouldActionBeInitiallyEnabled = delegate.formView(self, shouldAllowToCompleteWithValues: currentValues)
+                }
+                
+                let actionField = XVSField(name: Constants.ctaActionName, title: actionCopy, type: .cta, size: .medium, options: [
+                    .isEnabled: shouldActionBeInitiallyEnabled
+                ])
+                
                 let actionSection = XVSSection(title: "", fields: [actionField], collapsable: false)
                 sections.append(actionSection)
+                
+                //print(sections)
             }
         }
     }
@@ -49,6 +71,18 @@ public class XVSFormViewController: UITableViewController {
     
     private var mode: XVSFormMode {
         return options?[.mode] as? XVSFormMode ?? .action
+    }
+    
+    private var ctaField: XVSField? {
+        let lastSection = sections.last
+        let lastField = lastSection?.fields.last
+        
+        if let ctaField = lastField,
+            ctaField.name == Constants.ctaActionName {
+            return ctaField
+        } else {
+            return nil
+        }
     }
     
     private var currentValues: XVSFieldValues {
@@ -62,7 +96,7 @@ public class XVSFormViewController: UITableViewController {
             for field in section.fields {
                 let indexPath = IndexPath(row: fieldIterator, section: sectionIterator)
                 
-                if let cell = tableView.cellForRow(at: indexPath) as? FormFieldDelegate {
+                if let cell = tableView.cellForRow(at: indexPath) as? FormFieldProtocol {
                     values[field.name] = cell.currentSavedValue
                 }
                 
@@ -105,8 +139,10 @@ public class XVSFormViewController: UITableViewController {
         
         vc.name = name
         vc.sections = sections
-        vc.delegate = delegate
+        vc.delegate = delegate // Delegate should always go before options
         vc.options = options
+        
+        print(vc.sections)
         
         if presentation == .modal {
             vc.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel,
@@ -156,6 +192,28 @@ public class XVSFormViewController: UITableViewController {
             break
         }
     }
+    
+    private func updateCompletionAvailability() {
+        guard let delegate = delegate,
+            sections.count > 0 else {
+            return
+        }
+        
+        if mode == .action {
+            let isEnabled = delegate.formView(self, shouldAllowToCompleteWithValues: currentValues)
+            
+            // Unsafe
+            let lastSectionsIndex = sections.count - 1
+            let lastFieldsIndex = sections.last!.fields.count - 1
+            
+            sections[lastSectionsIndex].fields[lastFieldsIndex].options?[.isEnabled] = isEnabled
+            
+            let indexPathToReload = IndexPath(row: lastFieldsIndex, section: lastSectionsIndex)
+            tableView.reloadRows(at: [indexPathToReload], with: .none)
+        } else {
+            // Play with enability of bar item action
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -182,6 +240,7 @@ public class XVSFormViewController: UITableViewController {
             
             if let textCell = cell as? TextTableViewCell {
                 textCell.configAsName(forField: field)
+                textCell.delegate = self
             }
             
             return cell
@@ -194,6 +253,7 @@ public class XVSFormViewController: UITableViewController {
             
             if let textCell = cell as? TextTableViewCell {
                 textCell.configAsEmail(forField: field)
+                textCell.delegate = self
             }
             
             return cell
@@ -206,6 +266,7 @@ public class XVSFormViewController: UITableViewController {
             
             if let textCell = cell as? TextTableViewCell {
                 textCell.configAsPassword(forField: field)
+                textCell.delegate = self
             }
             
             return cell
@@ -218,6 +279,7 @@ public class XVSFormViewController: UITableViewController {
             
             if let textCell = cell as? TextTableViewCell {
                 textCell.configAsText(forField: field)
+                textCell.delegate = self
             }
             
             return cell
@@ -230,6 +292,7 @@ public class XVSFormViewController: UITableViewController {
             
             if let textCell = cell as? TextTableViewCell {
                 textCell.configAsPhoneNumber(forField: field)
+                textCell.delegate = self
             }
             
             return cell
@@ -336,4 +399,12 @@ public class XVSFormViewController: UITableViewController {
         }
     }
 
+}
+
+extension XVSFormViewController : FieldCellDelegate {
+    
+    func cell(forField field: XVSField, changedToValue value: Any?) {
+        updateCompletionAvailability()
+    }
+    
 }

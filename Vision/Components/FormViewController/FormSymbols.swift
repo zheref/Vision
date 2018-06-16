@@ -50,11 +50,12 @@ public enum XVSFieldOption {
     case keyboardColor
     case hasClearButton
     case action
+    case isEnabled
 }
 
 public typealias XVSFieldOptions = [XVSFieldOption: Any]
 
-protocol FormFieldDelegate {
+protocol FormFieldProtocol {
     
     var currentSavedValue: Any? { get }
     

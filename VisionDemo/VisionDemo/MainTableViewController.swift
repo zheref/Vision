@@ -98,7 +98,13 @@ extension MainTableViewController : XVSFormViewControllerDelegate {
     }
     
     func formView(_ viewController: XVSFormViewController, shouldAllowToCompleteWithValues values: XVSFieldValues) -> Bool {
-        return true
+        var availability = false
+        
+        if let email = values["email"] as? String {
+            availability = email.count > 0
+        }
+        
+        return availability
     }
     
     func formView(_ viewController: XVSFormViewController, shouldAllowToAbortWithValues values: XVSFieldValues) -> Bool {
