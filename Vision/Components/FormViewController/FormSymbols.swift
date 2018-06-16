@@ -8,17 +8,17 @@
 
 import Foundation
 
-public enum FieldSize {
+public enum XVSFieldSize {
     case regular
     case medium
     case big
 }
 
-public typealias FieldValues = [String: Any?]
+public typealias XVSFieldValues = [String: Any?]
 
-public typealias FormOptions = [FormOption: Any]
+public typealias XVSFormOptions = [XVSFormOption: Any]
 
-public enum FormOption {
+public enum XVSFormOption {
     case presentation
     case mode
     case actionCopy
@@ -27,17 +27,17 @@ public enum FormOption {
     case theme
 }
 
-public enum FormPresentation {
+public enum XVSFormPresentation {
     case push
     case modal
 }
 
-public enum FormTheme {
+public enum XVSFormTheme {
     case light
     case dark
 }
 
-public enum FormMode {
+public enum XVSFormMode {
     case new
     case edit
     case editDelete
@@ -45,13 +45,13 @@ public enum FormMode {
     case action
 }
 
-public enum FieldOption {
+public enum XVSFieldOption {
     case placeholder
     case keyboardColor
     case hasClearButton
 }
 
-public typealias FieldOptions = [FieldOption: Any]
+public typealias XVSFieldOptions = [XVSFieldOption: Any]
 
 protocol FormFieldDelegate {
     

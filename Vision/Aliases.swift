@@ -8,4 +8,4 @@
 
 import Foundation
 
-public typealias VisionHandler = () -> Void
+public typealias XVSHandler = () -> Void

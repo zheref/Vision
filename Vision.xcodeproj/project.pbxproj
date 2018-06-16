@@ -10,19 +10,20 @@
 		02E895B1B4668619758DDC27 /* Pods_Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E39A2323A4E0A9E3D2ED1B /* Pods_Vision.framework */; };
 		2B5CA88E20C9C47800712E87 /* FormSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5CA88D20C9C47800712E87 /* FormSymbols.swift */; };
 		2B5CA89020C9DD6C00712E87 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5CA88F20C9DD6C00712E87 /* TextTableViewCell.swift */; };
-		2B5CA89920CB145B00712E87 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5CA89820CB145B00712E87 /* Field.swift */; };
-		2B5CA89B20CB147700712E87 /* FieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5CA89A20CB147700712E87 /* FieldType.swift */; };
-		2B5CA89D20CB14DA00712E87 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5CA89C20CB14DA00712E87 /* Section.swift */; };
+		2B5CA89920CB145B00712E87 /* XVSField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5CA89820CB145B00712E87 /* XVSField.swift */; };
+		2B5CA89B20CB147700712E87 /* XVSFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5CA89A20CB147700712E87 /* XVSFieldType.swift */; };
+		2B5CA89D20CB14DA00712E87 /* XVSSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5CA89C20CB14DA00712E87 /* XVSSection.swift */; };
 		2B5CA89F20CB214200712E87 /* ActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5CA89E20CB214200712E87 /* ActionTableViewCell.swift */; };
 		2C3E5A64D584300D4407A051 /* Pods_VisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9812FE643093154D75C366C9 /* Pods_VisionTests.framework */; };
-		9DF5AF4920C84AA3001AD9B7 /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF5AF3F20C84AA3001AD9B7 /* Vision.framework */; };
+		9D64A33720D57271001F99C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D64A33620D57271001F99C3 /* UIKit.framework */; };
+		9DF5AF4920C84AA3001AD9B7 /* XVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF5AF3F20C84AA3001AD9B7 /* XVision.framework */; };
 		9DF5AF4E20C84AA3001AD9B7 /* VisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5AF4D20C84AA3001AD9B7 /* VisionTests.swift */; };
 		9DF5AF5020C84AA4001AD9B7 /* Vision.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DF5AF4220C84AA3001AD9B7 /* Vision.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9DF5AF8920C8524B001AD9B7 /* DarkTouchTweaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5AF8820C8524B001AD9B7 /* DarkTouchTweaker.swift */; };
 		9DF5AF8B20C8534B001AD9B7 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5AF8A20C8534B001AD9B7 /* UIViewController+Alerts.swift */; };
 		9DF5AF8D20C8542B001AD9B7 /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5AF8C20C8542B001AD9B7 /* Aliases.swift */; };
 		9DF5AF8F20C875FF001AD9B7 /* FormViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DF5AF8E20C875FF001AD9B7 /* FormViewController.storyboard */; };
-		9DF5AF9120C8777D001AD9B7 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5AF9020C8777D001AD9B7 /* FormViewController.swift */; };
+		9DF5AF9120C8777D001AD9B7 /* XVSFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5AF9020C8777D001AD9B7 /* XVSFormViewController.swift */; };
 		9DF5AF9320C87A5F001AD9B7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5AF9220C87A5F001AD9B7 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,13 +42,14 @@
 		26E39A2323A4E0A9E3D2ED1B /* Pods_Vision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B5CA88D20C9C47800712E87 /* FormSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSymbols.swift; sourceTree = "<group>"; };
 		2B5CA88F20C9DD6C00712E87 /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
-		2B5CA89820CB145B00712E87 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
-		2B5CA89A20CB147700712E87 /* FieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldType.swift; sourceTree = "<group>"; };
-		2B5CA89C20CB14DA00712E87 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		2B5CA89820CB145B00712E87 /* XVSField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XVSField.swift; sourceTree = "<group>"; };
+		2B5CA89A20CB147700712E87 /* XVSFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XVSFieldType.swift; sourceTree = "<group>"; };
+		2B5CA89C20CB14DA00712E87 /* XVSSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XVSSection.swift; sourceTree = "<group>"; };
 		2B5CA89E20CB214200712E87 /* ActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTableViewCell.swift; sourceTree = "<group>"; };
 		7A8DDAE45AB7EF7BA3EC775B /* Pods-VisionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VisionTests/Pods-VisionTests.release.xcconfig"; sourceTree = "<group>"; };
 		9812FE643093154D75C366C9 /* Pods_VisionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VisionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DF5AF3F20C84AA3001AD9B7 /* Vision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Vision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D64A33620D57271001F99C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9DF5AF3F20C84AA3001AD9B7 /* XVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF5AF4220C84AA3001AD9B7 /* Vision.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vision.h; sourceTree = "<group>"; };
 		9DF5AF4320C84AA3001AD9B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DF5AF4820C84AA3001AD9B7 /* VisionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VisionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,7 +59,7 @@
 		9DF5AF8A20C8534B001AD9B7 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		9DF5AF8C20C8542B001AD9B7 /* Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
 		9DF5AF8E20C875FF001AD9B7 /* FormViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FormViewController.storyboard; sourceTree = "<group>"; };
-		9DF5AF9020C8777D001AD9B7 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		9DF5AF9020C8777D001AD9B7 /* XVSFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XVSFormViewController.swift; sourceTree = "<group>"; };
 		9DF5AF9220C87A5F001AD9B7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC83D2E66C39584A7489A039 /* Pods-VisionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VisionTests/Pods-VisionTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF931678164705D965DE3AB0 /* Pods-Vision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vision.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vision/Pods-Vision.debug.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D64A33720D57271001F99C3 /* UIKit.framework in Frameworks */,
 				02E895B1B4668619758DDC27 /* Pods_Vision.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DF5AF4920C84AA3001AD9B7 /* Vision.framework in Frameworks */,
+				9DF5AF4920C84AA3001AD9B7 /* XVision.framework in Frameworks */,
 				2C3E5A64D584300D4407A051 /* Pods_VisionTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,11 +91,11 @@
 			isa = PBXGroup;
 			children = (
 				9DF5AF8E20C875FF001AD9B7 /* FormViewController.storyboard */,
-				2B5CA89C20CB14DA00712E87 /* Section.swift */,
-				2B5CA89820CB145B00712E87 /* Field.swift */,
-				2B5CA89A20CB147700712E87 /* FieldType.swift */,
+				2B5CA89C20CB14DA00712E87 /* XVSSection.swift */,
+				2B5CA89820CB145B00712E87 /* XVSField.swift */,
+				2B5CA89A20CB147700712E87 /* XVSFieldType.swift */,
 				2B5CA88D20C9C47800712E87 /* FormSymbols.swift */,
-				9DF5AF9020C8777D001AD9B7 /* FormViewController.swift */,
+				9DF5AF9020C8777D001AD9B7 /* XVSFormViewController.swift */,
 				2B5CA88F20C9DD6C00712E87 /* TextTableViewCell.swift */,
 				2B5CA89E20CB214200712E87 /* ActionTableViewCell.swift */,
 			);
@@ -102,6 +105,7 @@
 		65DD6242893597C9A44DD846 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D64A33620D57271001F99C3 /* UIKit.framework */,
 				26E39A2323A4E0A9E3D2ED1B /* Pods_Vision.framework */,
 				9812FE643093154D75C366C9 /* Pods_VisionTests.framework */,
 			);
@@ -122,7 +126,7 @@
 		9DF5AF4020C84AA3001AD9B7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9DF5AF3F20C84AA3001AD9B7 /* Vision.framework */,
+				9DF5AF3F20C84AA3001AD9B7 /* XVision.framework */,
 				9DF5AF4820C84AA3001AD9B7 /* VisionTests.xctest */,
 			);
 			name = Products;
@@ -200,9 +204,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		9DF5AF3E20C84AA3001AD9B7 /* Vision */ = {
+		9DF5AF3E20C84AA3001AD9B7 /* XVision */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9DF5AF5320C84AA4001AD9B7 /* Build configuration list for PBXNativeTarget "Vision" */;
+			buildConfigurationList = 9DF5AF5320C84AA4001AD9B7 /* Build configuration list for PBXNativeTarget "XVision" */;
 			buildPhases = (
 				797BC420FEE889CC1275C7AF /* [CP] Check Pods Manifest.lock */,
 				9DF5AF3A20C84AA3001AD9B7 /* Sources */,
@@ -214,9 +218,9 @@
 			);
 			dependencies = (
 			);
-			name = Vision;
+			name = XVision;
 			productName = Vision;
-			productReference = 9DF5AF3F20C84AA3001AD9B7 /* Vision.framework */;
+			productReference = 9DF5AF3F20C84AA3001AD9B7 /* XVision.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9DF5AF4720C84AA3001AD9B7 /* VisionTests */ = {
@@ -269,7 +273,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9DF5AF3E20C84AA3001AD9B7 /* Vision */,
+				9DF5AF3E20C84AA3001AD9B7 /* XVision */,
 				9DF5AF4720C84AA3001AD9B7 /* VisionTests */,
 			);
 		};
@@ -339,15 +343,15 @@
 			files = (
 				9DF5AF8B20C8534B001AD9B7 /* UIViewController+Alerts.swift in Sources */,
 				2B5CA89020C9DD6C00712E87 /* TextTableViewCell.swift in Sources */,
-				2B5CA89920CB145B00712E87 /* Field.swift in Sources */,
+				2B5CA89920CB145B00712E87 /* XVSField.swift in Sources */,
 				9DF5AF8920C8524B001AD9B7 /* DarkTouchTweaker.swift in Sources */,
 				9DF5AF9320C87A5F001AD9B7 /* Constants.swift in Sources */,
-				2B5CA89D20CB14DA00712E87 /* Section.swift in Sources */,
+				2B5CA89D20CB14DA00712E87 /* XVSSection.swift in Sources */,
 				2B5CA88E20C9C47800712E87 /* FormSymbols.swift in Sources */,
-				9DF5AF9120C8777D001AD9B7 /* FormViewController.swift in Sources */,
+				9DF5AF9120C8777D001AD9B7 /* XVSFormViewController.swift in Sources */,
 				9DF5AF8D20C8542B001AD9B7 /* Aliases.swift in Sources */,
 				2B5CA89F20CB214200712E87 /* ActionTableViewCell.swift in Sources */,
-				2B5CA89B20CB147700712E87 /* FieldType.swift in Sources */,
+				2B5CA89B20CB147700712E87 /* XVSFieldType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +368,7 @@
 /* Begin PBXTargetDependency section */
 		9DF5AF4B20C84AA3001AD9B7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9DF5AF3E20C84AA3001AD9B7 /* Vision */;
+			target = 9DF5AF3E20C84AA3001AD9B7 /* XVision */;
 			targetProxy = 9DF5AF4A20C84AA3001AD9B7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -597,7 +601,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9DF5AF5320C84AA4001AD9B7 /* Build configuration list for PBXNativeTarget "Vision" */ = {
+		9DF5AF5320C84AA4001AD9B7 /* Build configuration list for PBXNativeTarget "XVision" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9DF5AF5420C84AA4001AD9B7 /* Debug */,

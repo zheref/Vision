@@ -6,7 +6,7 @@
 //  Copyright © 2018 Sergio Lozano García. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class DarkTouchTweaker {
     

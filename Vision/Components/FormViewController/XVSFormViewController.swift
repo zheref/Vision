@@ -8,32 +8,32 @@
 
 import UIKit
 
-public protocol FormViewControllerDelegate : class {
+public protocol XVSFormViewControllerDelegate : class {
     
-    func formView(withName formName: String, didAbortWithValues values: FieldValues)
-    func formView(withName formName: String, didCompleteWithValues values: FieldValues)
+    func formView(withName formName: String, didAbortWithValues values: XVSFieldValues)
+    func formView(withName formName: String, didCompleteWithValues values: XVSFieldValues)
     
 }
 
-public class FormViewController: UITableViewController {
+public class XVSFormViewController: UITableViewController {
     
     // MARK: Class members
     
     // MARK: - Stored properties
     
     private var name = String()
-    private var sections = [Section]()
+    private var sections = [XVSSection]()
     
-    private weak var delegate: FormViewControllerDelegate?
+    private weak var delegate: XVSFormViewControllerDelegate?
     
-    private var options: FormOptions? {
+    private var options: XVSFormOptions? {
         didSet {
-            if let mode = options?[.mode] as? FormMode,
+            if let mode = options?[.mode] as? XVSFormMode,
                 mode == .action {
                 
                 let actionCopy = options?[.actionCopy] as? String ?? "Done"
-                let actionField = Field(title: actionCopy, type: .cta, size: .medium)
-                let actionSection = Section(title: "", fields: [actionField], collapsable: false)
+                let actionField = XVSField(title: actionCopy, type: .cta, size: .medium)
+                let actionSection = XVSSection(title: "", fields: [actionField], collapsable: false)
                 sections.append(actionSection)
             }
         }
@@ -41,11 +41,11 @@ public class FormViewController: UITableViewController {
     
     // MARK: - Computed properties
     
-    private var mode: FormMode {
-        return options?[.mode] as? FormMode ?? .action
+    private var mode: XVSFormMode {
+        return options?[.mode] as? XVSFormMode ?? .action
     }
     
-    private var currentValues: FieldValues {
+    private var currentValues: XVSFieldValues {
         var values = [String: Any?]()
         
         var sectionIterator = 0
@@ -72,12 +72,12 @@ public class FormViewController: UITableViewController {
     // MARK: - Initializers
     
     public static func instantiate(withName name: String,
-                                   fields: [Field],
-                                   delegate: FormViewControllerDelegate? = nil,
-                                   options: FormOptions? = nil) -> UIViewController {
+                                   fields: [XVSField],
+                                   delegate: XVSFormViewControllerDelegate? = nil,
+                                   options: XVSFormOptions? = nil) -> UIViewController {
         
         let sections = [
-            Section(title: String(), fields: fields, collapsable: false)
+            XVSSection(title: String(), fields: fields, collapsable: false)
         ]
         
         return instantiate(withName: name,
@@ -87,15 +87,15 @@ public class FormViewController: UITableViewController {
     }
     
     public static func instantiate(withName name: String,
-                                   sections: [Section],
-                                   delegate: FormViewControllerDelegate?,
-                                   options: FormOptions? = nil) -> UIViewController {
+                                   sections: [XVSSection],
+                                   delegate: XVSFormViewControllerDelegate?,
+                                   options: XVSFormOptions? = nil) -> UIViewController {
         
-        let presentation = options?[.presentation] as? FormPresentation
+        let presentation = options?[.presentation] as? XVSFormPresentation
         
         let storyboard = UIStoryboard(name: K.Storyboard.FormViewController,
-                                    bundle: Bundle(for: FormViewController.self))
-        let vc = storyboard.instantiateInitialViewController() as! FormViewController
+                                    bundle: Bundle(for: XVSFormViewController.self))
+        let vc = storyboard.instantiateInitialViewController() as! XVSFormViewController
         
         vc.name = name
         vc.sections = sections
@@ -308,7 +308,7 @@ public class FormViewController: UITableViewController {
     // MARK: - Actions
     
     @objc func userDidTapToAbort(sender: UIBarButtonItem) {
-        if let presentation = options?[.presentation] as? FormPresentation,
+        if let presentation = options?[.presentation] as? XVSFormPresentation,
             presentation == .modal {
             dismiss(animated: true) { [unowned self] in
                 self.delegate?.formView(withName: self.name, didAbortWithValues: self.currentValues)
@@ -319,7 +319,7 @@ public class FormViewController: UITableViewController {
     }
     
     @objc func userDidTapToConfirm(sender: Any) {
-        if let presentation = options?[.presentation] as? FormPresentation,
+        if let presentation = options?[.presentation] as? XVSFormPresentation,
             presentation == .modal {
             dismiss(animated: true) { [unowned self] in
                 self.delegate?.formView(withName: self.name, didCompleteWithValues: self.currentValues)

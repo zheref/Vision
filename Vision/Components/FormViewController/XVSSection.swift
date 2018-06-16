@@ -8,12 +8,12 @@
 
 import Foundation
 
-public struct Section {
+public struct XVSSection {
     var title: String
-    var fields: [Field]
+    var fields: [XVSField]
     var collapsable: Bool
     
-    public init(title: String, fields: [Field], collapsable: Bool) {
+    public init(title: String, fields: [XVSField], collapsable: Bool) {
         self.title = title
         self.fields = fields
         self.collapsable = collapsable

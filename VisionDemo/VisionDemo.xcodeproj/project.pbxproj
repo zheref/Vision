@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B5CA89220C9F62700712E87 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5CA89120C9F62700712E87 /* MainTableViewController.swift */; };
-		2B5CA89720CAA49500712E87 /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B5CA89620CAA49500712E87 /* Vision.framework */; };
+		9D64A33520D570BC001F99C3 /* XVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D64A33420D570BC001F99C3 /* XVision.framework */; };
 		9DF5AF6620C84E0A001AD9B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5AF6520C84E0A001AD9B7 /* AppDelegate.swift */; };
 		9DF5AF6B20C84E0A001AD9B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DF5AF6920C84E0A001AD9B7 /* Main.storyboard */; };
 		9DF5AF6D20C84E0D001AD9B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DF5AF6C20C84E0D001AD9B7 /* Assets.xcassets */; };
@@ -30,6 +30,7 @@
 		2B5CA89120C9F62700712E87 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		2B5CA89420CAA41800712E87 /* Vision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Vision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B5CA89620CAA49500712E87 /* Vision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Vision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D64A33420D570BC001F99C3 /* XVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = XVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF5AF6220C84E0A001AD9B7 /* VisionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF5AF6520C84E0A001AD9B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DF5AF6A20C84E0A001AD9B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -46,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B5CA89720CAA49500712E87 /* Vision.framework in Frameworks */,
+				9D64A33520D570BC001F99C3 /* XVision.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +64,7 @@
 		2B5CA89320CAA41800712E87 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D64A33420D570BC001F99C3 /* XVision.framework */,
 				2B5CA89620CAA49500712E87 /* Vision.framework */,
 				2B5CA89420CAA41800712E87 /* Vision.framework */,
 			);

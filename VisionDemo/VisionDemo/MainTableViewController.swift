@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Vision
+import XVision
 
 class MainTableViewController: UITableViewController {
     
@@ -39,16 +39,16 @@ class MainTableViewController: UITableViewController {
     
     private func showLoginForm() {
         let fields = [
-            Field(title: "E-mail", type: .email, size: .regular, options: [
+            XVSField(title: "E-mail", type: .email, size: .regular, options: [
                 .placeholder : "E-mail"
             ]),
-            Field(title: "Password", type: .password, size: .regular, options: [
+            XVSField(title: "Password", type: .password, size: .regular, options: [
                 .placeholder : "Password"
             ])
         ]
         
-        let vc = FormViewController.instantiate(withName: "login", fields: fields, delegate: self, options: [
-            .mode: FormMode.action,
+        let vc = XVSFormViewController.instantiate(withName: "login", fields: fields, delegate: self, options: [
+            .mode: XVSFormMode.action,
             .actionCopy: "Login"
         ])
         
@@ -57,17 +57,17 @@ class MainTableViewController: UITableViewController {
     
     private func showLoginFormModally() {
         let fields = [
-            Field(title: "E-mail", type: .email, size: .regular, options: [
+            XVSField(title: "E-mail", type: .email, size: .regular, options: [
                 .placeholder : "E-mail"
             ]),
-            Field(title: "Password", type: .password, size: .regular, options: [
+            XVSField(title: "Password", type: .password, size: .regular, options: [
                 .placeholder : "Password"
             ])
         ]
         
-        let vc = FormViewController.instantiate(withName: "login", fields: fields, delegate: self, options: [
-            .presentation: FormPresentation.modal,
-            .mode: FormMode.action,
+        let vc = XVSFormViewController.instantiate(withName: "login", fields: fields, delegate: self, options: [
+            .presentation: XVSFormPresentation.modal,
+            .mode: XVSFormMode.action,
             .actionCopy: "Login"
         ])
         
@@ -86,13 +86,13 @@ class MainTableViewController: UITableViewController {
 
 }
 
-extension MainTableViewController : FormViewControllerDelegate {
+extension MainTableViewController : XVSFormViewControllerDelegate {
     
-    func formView(withName formName: String, didAbortWithValues values: FieldValues) {
+    func formView(withName formName: String, didAbortWithValues values: XVSFieldValues) {
         print(values)
     }
     
-    func formView(withName formName: String, didCompleteWithValues values: FieldValues) {
+    func formView(withName formName: String, didCompleteWithValues values: XVSFieldValues) {
         print(values)
     }
     

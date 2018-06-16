@@ -29,33 +29,33 @@ class TextTableViewCell: UITableViewCell {
     
     // MARK: Operations
     
-    func configAsName(forField field: Field) {
+    func configAsName(forField field: XVSField) {
         textField.autocapitalizationType = .words
         
         handleClearButtonMode(fromOptions: field.options)
         handlePlaceholder(forField: field)
     }
     
-    func configAsEmail(forField field: Field) {
+    func configAsEmail(forField field: XVSField) {
         textField.keyboardType = .emailAddress
         
         handleClearButtonMode(fromOptions: field.options)
         handlePlaceholder(forField: field)
     }
     
-    func configAsPassword(forField field: Field) {
+    func configAsPassword(forField field: XVSField) {
         textField.isSecureTextEntry = true
         
         handleClearButtonMode(fromOptions: field.options)
         handlePlaceholder(forField: field)
     }
     
-    func configAsText(forField field: Field) {
+    func configAsText(forField field: XVSField) {
         handleClearButtonMode(fromOptions: field.options)
         handlePlaceholder(forField: field)
     }
     
-    func configAsPhoneNumber(forField field: Field) {
+    func configAsPhoneNumber(forField field: XVSField) {
         textField.keyboardType = .namePhonePad
         
         handleClearButtonMode(fromOptions: field.options)
@@ -64,7 +64,7 @@ class TextTableViewCell: UITableViewCell {
     
     // MARK: - Private operations
     
-    private func handleClearButtonMode(fromOptions options: FieldOptions?) {
+    private func handleClearButtonMode(fromOptions options: XVSFieldOptions?) {
         if let hasClearButton = options?[.hasClearButton] as? Bool {
             textField.clearButtonMode = hasClearButton ? .whileEditing : .never
         } else {
@@ -72,7 +72,7 @@ class TextTableViewCell: UITableViewCell {
         }
     }
     
-    private func handlePlaceholder(forField field: Field) {
+    private func handlePlaceholder(forField field: XVSField) {
         if let placeholder = field.options?[.placeholder] as? String {
             textField.placeholder = placeholder
         } else {

@@ -6,7 +6,7 @@
 //  Copyright © 2018 Sergio Lozano García. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 // MARK: - Public types
 
@@ -27,7 +27,7 @@ struct VisionRetryConstants {
     static let defaultCancelCopy = "Cancel"
     static let defaultStyle = UIAlertControllerStyle.alert
     static let defaultAnimated = true
-    static let defaultPresentationCompletion: VisionHandler? = nil
+    static let defaultPresentationCompletion: XVSHandler? = nil
 }
 
 // MARK: - Extension
@@ -38,8 +38,8 @@ public extension UIViewController {
     
     func showRetryAlert(withTitle title: String,
                         message: String,
-                        retryHandler retry: @escaping VisionHandler,
-                        cancelHandler cancel: VisionHandler? = nil,
+                        retryHandler retry: @escaping XVSHandler,
+                        cancelHandler cancel: XVSHandler? = nil,
                         options: VisionRetryOptions? = nil) {
         
         // Alert
@@ -74,7 +74,7 @@ public extension UIViewController {
         // Presentation
         
         let animated = options?[.animated] as? Bool ?? VisionRetryConstants.defaultAnimated
-        let completion = options?[.presentationCompletion] as? VisionHandler ??
+        let completion = options?[.presentationCompletion] as? XVSHandler ??
             VisionRetryConstants.defaultPresentationCompletion
         
         present(alert, animated: animated, completion: completion)

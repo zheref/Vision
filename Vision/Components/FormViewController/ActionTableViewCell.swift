@@ -16,7 +16,7 @@ class ActionTableViewCell: UITableViewCell {
     
     // MARK: - Stored properties
     
-    var actionClosure: VisionHandler?
+    var actionClosure: XVSHandler?
     
     // MARK: - Lifecycle
     
@@ -42,17 +42,17 @@ class ActionTableViewCell: UITableViewCell {
     
     // MARK: - Operations
     
-    func configAsCTA(forField field: Field, withHandler handler: VisionHandler?) {
+    func configAsCTA(forField field: XVSField, withHandler handler: XVSHandler?) {
         actionClosure = handler
         actionButton.setTitle(field.title, for: .normal)
     }
     
-    func configAsAction(forField field: Field, withHandler handler: VisionHandler?) {
+    func configAsAction(forField field: XVSField, withHandler handler: XVSHandler?) {
         actionClosure = handler
         actionButton.setTitle(field.title, for: .normal)
     }
     
-    func configAsDelete(forField field: Field, withHandler handler: VisionHandler?) {
+    func configAsDelete(forField field: XVSField, withHandler handler: XVSHandler?) {
         actionClosure = handler
         actionButton.setTitle(field.title, for: .normal)
     }
