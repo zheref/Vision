@@ -39,12 +39,8 @@ class MainTableViewController: UITableViewController {
     
     private func showLoginForm() {
         let fields = [
-            XVSField(name: "email", title: "E-mail", type: .email, size: .regular, options: [
-                .placeholder : "E-mail"
-            ]),
-            XVSField(name: "password", title: "Password", type: .password, size: .regular, options: [
-                .placeholder : "Password"
-            ])
+            XVSField(name: "email", title: "E-mail", type: .email, size: .regular),
+            XVSField(name: "password", title: "Password", type: .password, size: .regular)
         ]
         
         let vc = XVSFormViewController.instantiate(withName: "login", fields: fields, delegate: self, options: [
@@ -57,13 +53,9 @@ class MainTableViewController: UITableViewController {
     
     private func showLoginFormModally() {
         let fields = [
-            XVSField(name: "email", title: "E-mail", type: .email, size: .regular, options: [
-                .placeholder : "E-mail"
-            ]),
-            XVSField(name: "password", title: "Password", type: .password, size: .regular, options: [
-                .placeholder : "Password"
-            ]),
-            XVSField(name: "action", title: "Custom Action", type: .action, size: .regular, options: nil)
+            XVSField(name: "email", title: "E-mail", type: .email, size: .regular),
+            XVSField(name: "password", title: "Password", type: .password, size: .regular),
+            XVSField(name: "action", title: "Custom Action", type: .action, size: .regular)
         ]
         
         let vc = XVSFormViewController.instantiate(withName: "login", fields: fields, delegate: self, options: [
