@@ -56,7 +56,8 @@ class MainTableViewController: UITableViewController {
         let fields = [
             XVSField(name: "email", title: "E-mail", type: .email, size: .regular),
             XVSField(name: "password", title: "Password", type: .password, size: .regular),
-            XVSField(name: "action", title: "Custom Action", type: .action, size: .regular)
+            XVSField(name: "action", title: "Custom Action", type: .action, size: .regular),
+            XVSField(name: "forward", title: "Go Forward", type: .action)
         ]
         
         let vc = XVSFormViewController.instantiate(withName: "login", fields: fields, delegate: self, options: [
@@ -107,6 +108,17 @@ extension MainTableViewController : XVSFormViewControllerDelegate {
     func formView(_ formViewController: XVSFormViewController, emmitedActionFromField field: XVSField, whileHavingValues values: XVSFieldValues) {
         if field.name == "action" {
             formViewController.showOkAlert(title: "Worked", message: "Custom actions are working")
+        } else if field.name == "forward" {
+            let fields = [
+                XVSField(name: "wildcard", title: "Wildcard", type: .text, size: .regular)
+            ]
+            
+            let vc = XVSFormViewController.instantiate(withName: "wildcarding", fields: fields, delegate: self, options: [
+                .mode: XVSFormMode.action,
+                .actionCopy: "Save"
+            ])
+            
+            formViewController.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
