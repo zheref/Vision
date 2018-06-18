@@ -45,6 +45,7 @@ class MainTableViewController: UITableViewController {
         
         let vc = XVSFormViewController.instantiate(withName: "login", fields: fields, delegate: self, options: [
             .mode: XVSFormMode.action,
+            .theme: XVSFormTheme.dark,
             .actionCopy: "Login"
         ])
         

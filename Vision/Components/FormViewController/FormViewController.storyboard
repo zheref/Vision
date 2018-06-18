@@ -17,6 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="textViewCell" id="VKQ-Y3-F5z" customClass="TextTableViewCell" customModule="XVision" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
@@ -197,7 +198,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYw-YA-qKh">
-                                            <rect key="frame" x="12" y="7" width="351" height="29.5"/>
+                                            <rect key="frame" x="8" y="7" width="359" height="29.5"/>
                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Action">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -208,8 +209,8 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="dYw-YA-qKh" secondAttribute="trailing" constant="12" id="6Va-pS-GZg"/>
-                                        <constraint firstItem="dYw-YA-qKh" firstAttribute="leading" secondItem="i0x-k9-sLT" secondAttribute="leading" constant="12" id="QQ3-Rk-axL"/>
+                                        <constraint firstAttribute="trailing" secondItem="dYw-YA-qKh" secondAttribute="trailing" constant="8" id="6Va-pS-GZg"/>
+                                        <constraint firstItem="dYw-YA-qKh" firstAttribute="leading" secondItem="i0x-k9-sLT" secondAttribute="leading" constant="8" id="QQ3-Rk-axL"/>
                                         <constraint firstItem="dYw-YA-qKh" firstAttribute="top" secondItem="i0x-k9-sLT" secondAttribute="top" constant="7" id="Ux5-cs-BZe"/>
                                         <constraint firstAttribute="bottom" secondItem="dYw-YA-qKh" secondAttribute="bottom" constant="7" id="fFL-uk-U9A"/>
                                     </constraints>

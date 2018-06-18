@@ -73,6 +73,10 @@ public class XVSFormViewController: UITableViewController {
         return options?[.mode] as? XVSFormMode ?? .action
     }
     
+    private var theme: XVSFormTheme {
+        return options?[.theme] as? XVSFormTheme ?? .light
+    }
+    
     private var ctaField: XVSField? {
         let lastSection = sections.last
         let lastField = lastSection?.fields.last
@@ -168,6 +172,7 @@ public class XVSFormViewController: UITableViewController {
         
         //tableView.separatorColor = UIColor.clear
         
+        setupTheme()
         setupActions()
     }
 
@@ -177,6 +182,13 @@ public class XVSFormViewController: UITableViewController {
     }
     
     // MARK: - Private operations
+    
+    private func setupTheme() {
+        if theme == .dark {
+            DarkTouchTweaker.setDarkMode(viewController: self)
+            tableView.separatorColor = DarkTouchTweaker.Color.separatorsColor
+        }
+    }
     
     private func setupActions() {
         switch mode {
@@ -239,6 +251,7 @@ public class XVSFormViewController: UITableViewController {
             //cell.separatorInset = UIEdgeInsetsMake(0.0, cell.bounds.size.width, 0.0, 0.0)
             
             if let textCell = cell as? TextTableViewCell {
+                textCell.theme = theme
                 textCell.configAsName(forField: field)
                 textCell.delegate = self
             }
@@ -252,6 +265,7 @@ public class XVSFormViewController: UITableViewController {
             //cell.separatorInset = UIEdgeInsetsMake(0.0, cell.bounds.size.width, 0.0, 0.0)
             
             if let textCell = cell as? TextTableViewCell {
+                textCell.theme = theme
                 textCell.configAsEmail(forField: field)
                 textCell.delegate = self
             }
@@ -265,6 +279,7 @@ public class XVSFormViewController: UITableViewController {
             //cell.separatorInset = UIEdgeInsetsMake(0.0, cell.bounds.size.width, 0.0, 0.0)
             
             if let textCell = cell as? TextTableViewCell {
+                textCell.theme = theme
                 textCell.configAsPassword(forField: field)
                 textCell.delegate = self
             }
@@ -278,6 +293,7 @@ public class XVSFormViewController: UITableViewController {
             //cell.separatorInset = UIEdgeInsetsMake(0.0, cell.bounds.size.width, 0.0, 0.0)
             
             if let textCell = cell as? TextTableViewCell {
+                textCell.theme = theme
                 textCell.configAsText(forField: field)
                 textCell.delegate = self
             }
@@ -291,6 +307,7 @@ public class XVSFormViewController: UITableViewController {
             //cell.separatorInset = UIEdgeInsetsMake(0.0, cell.bounds.size.width, 0.0, 0.0)
             
             if let textCell = cell as? TextTableViewCell {
+                textCell.theme = theme
                 textCell.configAsPhoneNumber(forField: field)
                 textCell.delegate = self
             }
@@ -302,6 +319,7 @@ public class XVSFormViewController: UITableViewController {
                                                      for: indexPath)
             
             if let actionCell = cell as? ActionTableViewCell {
+                actionCell.theme = theme
                 actionCell.configAsCTA(forField: field) { [unowned self] in
                     self.userDidTapToConfirm(sender: actionCell)
                 }
@@ -314,6 +332,7 @@ public class XVSFormViewController: UITableViewController {
                                                      for: indexPath)
             
             if let actionCell = cell as? ActionTableViewCell {
+                actionCell.theme = theme
                 actionCell.configAsAction(forField: field) { [unowned self] in
                     self.delegate?.formView(self, emmitedActionFromField: field, whileHavingValues: self.currentValues)
                 }
@@ -326,6 +345,7 @@ public class XVSFormViewController: UITableViewController {
                                                      for: indexPath)
             
             if let actionCell = cell as? ActionTableViewCell {
+                actionCell.theme = theme
                 actionCell.configAsDelete(forField: field) {
                     
                 }

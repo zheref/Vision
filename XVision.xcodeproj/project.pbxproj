@@ -93,11 +93,11 @@
 			isa = PBXGroup;
 			children = (
 				9DF5AF8E20C875FF001AD9B7 /* FormViewController.storyboard */,
+				9DF5AF9020C8777D001AD9B7 /* XVSFormViewController.swift */,
 				2B5CA89C20CB14DA00712E87 /* XVSSection.swift */,
 				2B5CA89820CB145B00712E87 /* XVSField.swift */,
 				2B5CA89A20CB147700712E87 /* XVSFieldType.swift */,
 				2B5CA88D20C9C47800712E87 /* FormSymbols.swift */,
-				9DF5AF9020C8777D001AD9B7 /* XVSFormViewController.swift */,
 				9D64A34020D5BE7C001F99C3 /* FieldCellDelegate.swift */,
 				2B5CA88F20C9DD6C00712E87 /* TextTableViewCell.swift */,
 				2B5CA89E20CB214200712E87 /* ActionTableViewCell.swift */,

@@ -18,12 +18,20 @@ class ActionTableViewCell: UITableViewCell {
     
     var actionClosure: XVSHandler?
     
+    var theme = XVSFormTheme.light
+    
     // MARK: - Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         setupActionButton()
+    }
+    
+    override func layoutSubviews() {
+        handleTheme()
+        
+        super.layoutSubviews()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -61,6 +69,7 @@ class ActionTableViewCell: UITableViewCell {
         actionClosure = handler
         actionButton.setTitle(field.title, for: .normal)
         handleEnability(forField: field)
+        handleTheme()
     }
     
     func configAsAction(forField field: XVSField, withHandler handler: XVSHandler?) {
@@ -69,12 +78,22 @@ class ActionTableViewCell: UITableViewCell {
         actionButton.backgroundColor = UIColor.clear
         actionButton.setTitleColor(actionButton.tintColor, for: .normal)
         handleEnability(forField: field)
+        handleTheme()
     }
     
     func configAsDelete(forField field: XVSField, withHandler handler: XVSHandler?) {
         actionClosure = handler
         actionButton.setTitle(field.title, for: .normal)
         handleEnability(forField: field)
+        handleTheme()
+    }
+    
+    // MARK: - Private operations
+    
+    private func handleTheme() {
+        if theme == .dark {
+            contentView.backgroundColor = DarkTouchTweaker.Color.backgroundColor
+        }
     }
     
     // MARK: - Actions
